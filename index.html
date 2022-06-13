@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="css.css" type="text/css">
+    <title>Movie Search</title>
+</head>
+<body>
+    <h1>Love App</h1>
+    <div id="app">
+        <h2>Check Compatibility</h2>
+        <input v-model="yourName" placeholder="Your Name Here" />
+        <input v-model="theirName" placeholder="Their Name Here" />
+        <button @click="GetMatch" class="btn btn-cute">Find Love</button>
+        <div v-if="match" class="container">
+            <table class="table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Compatibility percentage</th>
+                        <th>Advice</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>{{match.percentage}}%</td>
+                    <td>{{match.result}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
